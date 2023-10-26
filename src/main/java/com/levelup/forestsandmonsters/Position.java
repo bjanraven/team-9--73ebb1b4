@@ -4,7 +4,7 @@ import java.awt.Point;
 
 public class Position {
 
-    private Point point;
+    public Point point;
     
     public Position(){
         point = new Point(4,4);
