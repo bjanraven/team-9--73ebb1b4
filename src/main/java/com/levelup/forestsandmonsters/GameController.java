@@ -6,6 +6,9 @@ public class GameController {
 
     static final String DEFAULT_CHARACTER_NAME = "Character";
 
+    private GameCharacter gameCharacter;
+    GameMap map;
+
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
@@ -41,17 +44,27 @@ public class GameController {
     // Pre-implemented to demonstrate ATDD
     // TODO: Update this if it does not match your design
     public void createCharacter(String name) {
-        if (name != null && !name.equals("")) {
-            status.characterName = name;
-        } else {
-            status.characterName = DEFAULT_CHARACTER_NAME;
+        String charName = name;
+        if (charName == null || charName.equals("")) {
+            charName = DEFAULT_CHARACTER_NAME;
         }
+        status.characterName = charName;
+        gameCharacter = new GameCharacter(charName);
     }
 
     public void startGame() {
         // TODO: Implement startGame - Should probably create tiles and put the character
         // on them?
         // TODO: Should also update the game results?
+        map = new GameMap();
+        if(gameCharacter == null)
+        {
+            this.gameCharacter = new GameCharacter();
+        }
+        gameCharacter.enterMap(map);
+        this.status.characterName = this.gameCharacter.getName();
+        this.status.currentPosition = this.gameCharacter.getPosition().point;
+        this.status.moveCount = this.gameCharacter.moveCount;
     }
 
     public GameStatus getStatus() {

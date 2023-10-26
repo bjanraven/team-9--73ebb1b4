@@ -7,9 +7,14 @@ public class GameCharacter {
     private String name;
     private Position currentPosition;
     private GameMap map;
+    int moveCount = 0;
 
     public GameCharacter(String name){
         this.name = name;
+    }
+
+    public GameCharacter(){
+        
     }
 
     public String getName(){
@@ -26,7 +31,12 @@ public class GameCharacter {
     }
     
 
-    public DIRECTION move(DIRECTION direction){
-        return direction;
+    public void move(DIRECTION direction) {
+        this.currentPosition = map.calculatePosition(this.currentPosition, direction);
+        moveCount++;
+    }
+
+    public int getMoveCount() {
+        return moveCount;
     }
 }
