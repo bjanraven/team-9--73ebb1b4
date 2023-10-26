@@ -42,7 +42,40 @@ public class LevelUpGame implements Quit.Command {
     gameController.startGame();
     // TODO: Update this prompt. Also, do you want to get the game status and tell
     // the character where their character is?
-    System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
+    System.out.println("Welcome to Escape from Wells Mansion !!!");
+    System.out.println("       ____||_____");
+    System.out.println("     /////////////\\");
+    System.out.println("   //  __       __  \\");
+    System.out.println("  //  /  \\     /  \\  \\");
+    System.out.println(" //   /    \\   /    \\   \\");
+    System.out.println("||   |      | |      |   ||");
+    System.out.println("||   |      | |      |   ||");
+    System.out.println("||   |______|_|______|   ||");
+    System.out.println("||  /   __   / \\   __   \\  ||");
+    System.out.println("|| /   /  \\   \\ /  \\   \\  ||");
+    System.out.println("||/   /    \\   |    \\   \\||");
+    System.out.println("   | |      |  |      | |");
+    System.out.println("   | |      |  |      | |");
+    System.out.println("   | |______|  |______| |");
+    System.out.println("   |  ______   ______  |");
+    System.out.println("  /   /     \\ /     \\   \\");
+    System.out.println(" /   /       |       \\   \\");
+    System.out.println("|   |        |        |   |");
+    System.out.println("|   |________|________|   |");
+    System.out.println("|  /   ____   ____   \\  |");
+    System.out.println("| /   /    \\ /    \\   \\ |");
+    System.out.println("|/   /      |      \\   \\|");
+    System.out.println("   | |       |       | |");
+    System.out.println("   | |       |       | |");
+    System.out.println("   | |       |       | |");
+    System.out.println("   | |       |       | |");
+    System.out.println("   | |       |       | |");
+    System.out.println("   |_|_______|_______|_|");
+    System.out.println("  /  /             \\  \\");
+    System.out.println(" /  /               \\  \\");
+    System.out.println("|  /                 \\  |");
+    System.out.println("| /                   \\ |");
+    System.out.println("|/                     \\|");
     System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Exit(X)?");
   }
 
@@ -76,13 +109,13 @@ public class LevelUpGame implements Quit.Command {
 
   @ShellMethod(value = "End the game", key = { "X", "x" })
   public void endGame() {
-    System.out.println("You exit the mysterious world.");
+    System.out.println("You are out of the Wells Mansion !!");
     printSummary();
     System.exit(0);
   }
 
   private void printSummary() {
-    System.out.println("Exiting the mysterious land!");
+    System.out.println("Exiting Wells Mansion!");
     for (GameStatus status : gameHistory) {
       // TODO: Override toString on game status to print pretty
       System.out.println(status);
