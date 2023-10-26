@@ -5,7 +5,7 @@ import com.levelup.forestsandmonsters.GameController.DIRECTION;
 public class GameCharacter {
     
     private String name;
-    private Position currentPosition;
+    Position currentPosition;
     private GameMap map;
     int moveCount = 0;
 

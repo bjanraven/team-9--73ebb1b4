@@ -36,13 +36,10 @@ public class GameController {
         status = new GameStatus(characterName, currentPosition, moveCount);
     }
 
-    // TODO: Ensure this AND CLI commands match domain model
     public static enum DIRECTION {
         NORTH, SOUTH, EAST, WEST
     }
 
-    // Pre-implemented to demonstrate ATDD
-    // TODO: Update this if it does not match your design
     public void createCharacter(String name) {
         String charName = name;
         if (charName == null || charName.equals("")) {
@@ -53,9 +50,6 @@ public class GameController {
     }
 
     public void startGame() {
-        // TODO: Implement startGame - Should probably create tiles and put the character
-        // on them?
-        // TODO: Should also update the game results?
         map = new GameMap();
         if(gameCharacter == null)
         {
@@ -72,22 +66,23 @@ public class GameController {
     }
 
     public void move(DIRECTION directionToMove) {
-        // TODO: Implement move - should call something on another class
-        // TODO: Should probably also update the game results
+        gameCharacter.move(directionToMove);
+        this.status.currentPosition = gameCharacter.getPosition().point;
+        this.status.moveCount = gameCharacter.getMoveCount();
     }
 
     public void setCharacterPosition(Point coordinates) {
-        // TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
-    }
-
-    public void setCurrentMoveCount(int moveCount) {
-        // TODO: IMPLEMENT THIS TO SET CURRENT MOVE COUNT -- exists to be testable
+        if(gameCharacter == null)
+            this.gameCharacter = new GameCharacter();
+        this.gameCharacter.currentPosition = new Position(coordinates.x, coordinates.y);
+        this.gameCharacter.moveCount = gameCharacter.getMoveCount();
+        this.status.characterName = this.gameCharacter.getName();
+        this.status.currentPosition = this.gameCharacter.currentPosition.point;
+        this.status.moveCount = this.gameCharacter.moveCount;
     }
 
     public int getTotalPositions() {
-        // TODO: IMPLEMENT THIS TO GET THE TOTAL POSITIONS FROM THE MAP -- exists to be
-        // testable
-        return -10;
+        return this.map.getTotalPositions();
     }
 
 }
