@@ -1,7 +1,6 @@
 package com.levelup.forestsandmonsters;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.isNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.awt.Point;
 
@@ -13,6 +12,8 @@ public class PositionTest {
     public void initPosition(){
         Position position = new Position(4,4);
 
-        assertEquals(position, isNotNull());
+         assertNotNull(position);
     }
+
+    
 }

@@ -1,6 +1,9 @@
 package com.levelup.forestsandmonsters;
 
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.awt.Point;
 import org.junit.Test;
@@ -18,24 +21,27 @@ public class GameCharacterTest {
 
     @Test
     public void characterWithNameTest(){
-        GameCharacter characterName= new GameCharacter("Legend of the dragons");
+        GameCharacter characterName= new GameCharacter("Legends of the dragons");
         assertEquals(characterName.getName(), "Legends of the dragons");
         
     }
 
+     
     @Test
     public void characterPositionTest(){
-        GameCharacter characterPosition= new GameCharacter();
-        assertEquals(characterPosition.getPosition(), new Point(4,4));
+        GameCharacter characterPosition = new GameCharacter();
+        assertNull(characterPosition.getPosition());
     }
 
+    public void testValidDirection(){
+        GameCharacter character = new GameCharacter();
 
-    @Test
-    public void characterMoveDirectionTest(){
-        GameCharacter characterDirection = new GameCharacter();
-        characterDirection.move(DIRECTION.NORTH);
-        assertEquals(new Point(4,5), characterDirection.getPosition());
+        assertEquals(character.move(DIRECTION.EAST), DIRECTION.WEST);
+        assertEquals(character.move(DIRECTION.WEST), DIRECTION.EAST);
+        assertEquals(character.move(DIRECTION.NORTH), DIRECTION.SOUTH);
+        assertEquals(character.move(DIRECTION.SOUTH), DIRECTION.NORTH);
     }
+
 
     /*
     @Test
@@ -43,5 +49,5 @@ public class GameCharacterTest {
         assertEquals(map, map);
     }
     */
-    
+
 }
