@@ -41,7 +41,13 @@ public class GameMap {
             newXCoordinate = startingPosition.point.x--;
             newYCoordinate = startingPosition.point.y; 
         }
-       return new Position(newXCoordinate, newYCoordinate);
+
+        if(isPositionValid(new Point(newXCoordinate, newYCoordinate))){
+            return this.positions[newXCoordinate][newYCoordinate];
+        }
+        else {
+            return startingPosition;
+        }
     }
 
 
@@ -62,13 +68,8 @@ public class GameMap {
     }
 
 
-    
-
-
-    
-
-    
-
-
+    public int getTotalPositions() {
+        return numPositions;
+    }
     
 }

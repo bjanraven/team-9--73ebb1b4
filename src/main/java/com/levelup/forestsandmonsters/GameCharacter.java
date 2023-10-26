@@ -6,7 +6,7 @@ public class GameCharacter {
     
     private String name;
     private Position currentPosition;
-    //private GameMap map;
+    private GameMap map;
 
     public GameCharacter(String name){
         this.name = name;
@@ -20,11 +20,11 @@ public class GameCharacter {
         return currentPosition;
     }
 
-    /* 
+    
     public void enterMap(GameMap map){
         this.map = map;
     }
-    */
+    
 
     public DIRECTION move(DIRECTION direction){
         return direction;

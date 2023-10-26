@@ -1,11 +1,8 @@
 package com.levelup.forestsandmonsters;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.awt.Point;
 import org.junit.Test;
 
 import com.levelup.forestsandmonsters.GameController.DIRECTION;
@@ -43,11 +40,11 @@ public class GameCharacterTest {
     }
 
 
-    /*
+    
     @Test
     public void enterMap(GameMap map){
         assertEquals(map, map);
     }
-    */
+    
 
 }
