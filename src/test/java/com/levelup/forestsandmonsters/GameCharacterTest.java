@@ -14,7 +14,7 @@ public class GameCharacterTest {
     
     @Test
     public void characterDefaultNameTest(){
-        GameCharacter character = new GameCharacter();
+        GameCharacter character = new GameCharacter("WELLS MANSION PLAYER");
         assertEquals(character.getName(), "WELLS MANSION PLAYER");
         
     }
@@ -29,12 +29,12 @@ public class GameCharacterTest {
      
     @Test
     public void characterPositionTest(){
-        GameCharacter characterPosition = new GameCharacter();
+        GameCharacter characterPosition = new GameCharacter("WELLS MANSION PLAYER");
         assertNull(characterPosition.getPosition());
     }
 
     public void testValidDirection(){
-        GameCharacter character = new GameCharacter();
+        GameCharacter character = new GameCharacter("WELLS MANSION PLAYER");
 
         assertEquals(character.move(DIRECTION.EAST), DIRECTION.WEST);
         assertEquals(character.move(DIRECTION.WEST), DIRECTION.EAST);

@@ -9,9 +9,8 @@ public class GameController {
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
-        public Point currentPosition = null;
-        // TODO: Write a failing unit test that will force you to set this to the right number
-        public int moveCount = -100;
+        public Point currentPosition = new Position(4, 4).point;
+        public int moveCount = 0;
 
         public GameStatus(String characterName, Point currentPosition,  int moveCount)
         {

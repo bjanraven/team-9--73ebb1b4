@@ -8,12 +8,6 @@ public class GameCharacter {
     private Position currentPosition;
     //private GameMap map;
 
-
-
-    public GameCharacter(){
-        name = "WELLS MANSION PLAYER";
-    }
-
     public GameCharacter(String name){
         this.name = name;
     }
