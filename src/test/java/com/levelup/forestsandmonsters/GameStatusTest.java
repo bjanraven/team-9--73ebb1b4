@@ -13,5 +13,11 @@ public class GameStatusTest {
         GameStatus testObj = new GameStatus("Mickey", new Point(5,5), 1 );
         assertNotNull(testObj.characterName);
     }
-    
+
+    @Test
+    public void test_get_status() {
+        GameStatus gs = new GameStatus();
+        String currentStatus = gs.getStatus();
+        assertNotNull(currentStatus);
+    }
 }

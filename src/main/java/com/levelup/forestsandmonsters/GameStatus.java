@@ -16,4 +16,13 @@ public class GameStatus {
         this.moveCount = moveCount;
     }
 
+    public GameStatus() {
+    }
+
+    public String getStatus() {
+        return "characterName: characterName" + "\n" 
+        + "currentPosition:" + currentPosition + "\n"
+        + "moveCount:" + moveCount + "\n";
+    }
+
 }
