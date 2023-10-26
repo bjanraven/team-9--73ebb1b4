@@ -57,7 +57,6 @@ public class GameController {
         }
         gameCharacter.enterMap(map);
         this.status.characterName = this.gameCharacter.getName();
-        this.status.currentPosition = this.gameCharacter.getPosition().point;
         this.status.moveCount = this.gameCharacter.moveCount;
     }
 
