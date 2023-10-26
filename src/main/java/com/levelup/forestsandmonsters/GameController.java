@@ -22,12 +22,6 @@ public class GameController {
 
         public GameStatus() {
         }
-
-        public String getStatus() {
-            return "characterName:" + characterName + "\n" 
-            + "currentPosition:" + currentPosition + "\n"
-            + "moveCount:" + moveCount + "\n";
-        }
     }
 
     GameStatus status;

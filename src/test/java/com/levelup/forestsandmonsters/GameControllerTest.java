@@ -18,7 +18,7 @@ public class GameControllerTest {
      @Test
     public void test_get_status() {
         GameController testObj = new GameController("Mickey", new Point(5,5), 1);
-        String currentStatus = testObj.status.getStatus();
+        GameStatus currentStatus = testObj.status;
         assertNotNull(currentStatus);
     }
 
