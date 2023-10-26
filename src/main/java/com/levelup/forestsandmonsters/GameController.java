@@ -12,12 +12,32 @@ public class GameController {
         public Point currentPosition = null;
         // TODO: Write a failing unit test that will force you to set this to the right number
         public int moveCount = -100;
+
+        public GameStatus(String characterName, Point currentPosition,  int moveCount)
+        {
+            this.characterName = characterName;
+            this.currentPosition = currentPosition;
+            this.moveCount = moveCount;
+        }
+
+        public GameStatus() {
+        }
+
+        public String getStatus() {
+            return "characterName:" + characterName + "\n" 
+            + "currentPosition:" + currentPosition + "\n"
+            + "moveCount:" + moveCount + "\n";
+        }
     }
 
     GameStatus status;
 
     public GameController() {
         status = new GameStatus();
+    }
+
+    public GameController(String characterName, Point currentPosition,  int moveCount) {
+        status = new GameStatus(characterName, currentPosition, moveCount);
     }
 
     // TODO: Ensure this AND CLI commands match domain model
